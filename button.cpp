@@ -8,19 +8,10 @@
 #define FRAMERATE 60
 #define TITLE "Button Hover Effect - Taha Shieenavaz"
 
-void drawRectangle(int x, int y, int width, int height){
-	rectangle(x-width/2, y-height/2, x+width/2,y+height/2);
-}
 
-void text(int x, int y, char* textContent){
-	int i;
-	for(i=0;true;i++){
-		if(textContent[i] == NULL){
-			break;
-		}
-	}
-	outtextxy(x - i*2, y, textContent);
-}
+void text(int x, int y, char* textContent);
+void drawRectangle(int x, int y, int width, int height);
+
 
 int main(){
 	
@@ -82,4 +73,19 @@ int main(){
 	}
 	
 	return 0;
+}
+
+
+void drawRectangle(int x, int y, int width, int height){
+	rectangle(x-width/2, y-height/2, x+width/2,y+height/2);
+}
+
+void text(int x, int y, char* textContent){
+	int i;
+	for(i=0;true;i++){
+		if(textContent[i] == NULL){
+			break;
+		}
+	}
+	outtextxy(x - i*2, y, textContent);
 }
