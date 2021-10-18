@@ -33,9 +33,30 @@ int main(){
 	
 	while(true){
 		cleardevice();
-		drawRectangle(WIDTH/2,HEIGHT/2,100,50);
-		text(WIDTH/2 - 10,WIDTH/2,"Hover Me!");
-		printf("%d %d \n", mousex(), mousey());
+		
+		int buttonCenterX = WIDTH/2;
+		int buttonCenterY = HEIGHT/2;
+		int buttonWidth = 100;
+		int buttonHeight = 50;
+		/* Check Hover */
+	
+		if(
+			mousex() <= (buttonCenterX + buttonWidth/2) &&
+			mousex() >= (buttonCenterX - buttonWidth/2) && 
+			mousey() <= (buttonCenterY + buttonHeight/2) &&
+			mousey() >= (buttonCenterY - buttonHeight/2)
+		){
+			setcolor(BLUE);
+		}else{
+			setcolor(WHITE);
+		}
+		
+		
+		drawRectangle(buttonCenterX,buttonCenterY,buttonWidth,buttonHeight);
+		text(WIDTH/2 - 14,HEIGHT/2 - 7,"Hover Me!");
+
+
+	
 		delay(1000/FRAMERATE);
 	}
 	
